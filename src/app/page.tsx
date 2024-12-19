@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { columns, Orders } from "@/components/Table/columns"
 import { DataTable } from "@/components/Table/page";
 import ChartComponent from "@/components/InsightsCharts/page";

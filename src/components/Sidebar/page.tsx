@@ -58,7 +58,8 @@ import {Settings,  Home,MessageCircle,Users } from "lucide-react"
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                      {item?.image ? item.icon : <item.icon /> }
+                    {typeof item.icon === "function" ? <item.icon /> : item.icon}
+                      
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>

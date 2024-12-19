@@ -1,3 +1,4 @@
+"use client"
 import {
     Sidebar,
     SidebarContent,
@@ -11,6 +12,7 @@ import {
     
   } from "@/components/ui/sidebar"
 import Logo from "../../../public/Logo.svg"
+import React from "react"
 import {Settings,  Home,MessageCircle,Users } from "lucide-react"
 
 
@@ -26,17 +28,17 @@ import {Settings,  Home,MessageCircle,Users } from "lucide-react"
       {
         title: "Home",
         url: "#",
-        icon: Home,
+        icon: <Home/>,
       },
       {
         title: "MessageCircle",
         url: "#",
-        icon: MessageCircle,
+        icon: <MessageCircle/>,
       },
       {
         title: "Users",
         url: "#",
-        icon: Users,
+        icon: <Users/>,
       },
     ]
     const footerItems=[{
@@ -58,8 +60,7 @@ import {Settings,  Home,MessageCircle,Users } from "lucide-react"
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                    {typeof item.icon === "function" ? <item.icon /> : item.icon}
-                      
+                    {item.icon}
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>

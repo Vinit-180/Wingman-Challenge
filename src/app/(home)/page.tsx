@@ -26,7 +26,6 @@ async function getData(): Promise<Orders[]> {
       orderValue: 149.99,
       commission: 14.99,
     },
-    // ... more orders can be added here
   ]
 }
 export default async function Home() {

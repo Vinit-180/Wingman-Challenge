@@ -9,12 +9,22 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
+    
   } from "@/components/ui/sidebar"
+import Logo from "../../../public/Logo.svg"
+import { Dialog, DialogTitle } from "@radix-ui/react-dialog"
 import {Settings,  Home,MessageCircle,Users } from "lucide-react"
 
 
   export function AppSidebar() {
     const items = [
+      {
+        title:"Wingman",
+        url:"#",
+        // icon:Logo
+        icon: <img src={Logo.src} alt="Wingman Icon" />, // Use Logo as an image for the icon
+        image:true
+      },
       {
         title: "Home",
         url: "#",
@@ -40,14 +50,17 @@ import {Settings,  Home,MessageCircle,Users } from "lucide-react"
       <Sidebar collapsible="icon">
         <SidebarContent>
           <SidebarGroup >
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel>
+          Wingman
+
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                      <item.icon />
+                      {item?.image ? item.icon : <item.icon /> }
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
@@ -70,6 +83,7 @@ import {Settings,  Home,MessageCircle,Users } from "lucide-react"
                 </SidebarMenuItem>
               ))}
               </SidebarFooter>
+
       </Sidebar>
     )
   }  

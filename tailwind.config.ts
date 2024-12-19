@@ -65,7 +65,10 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		backgroundImage:{
+			'custom-green-gradient': 'linear-gradient(180deg, #15B79F 0%, #0E9382 100%)',
+		}
   	}
   },
 //   plugins: [require("tailwindcss-animate")],

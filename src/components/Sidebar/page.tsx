@@ -5,14 +5,12 @@ import {
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
-    SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
     
   } from "@/components/ui/sidebar"
 import Logo from "../../../public/Logo.svg"
-import { Dialog, DialogTitle } from "@radix-ui/react-dialog"
 import {Settings,  Home,MessageCircle,Users } from "lucide-react"
 
 

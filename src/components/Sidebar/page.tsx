@@ -10,7 +10,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
   } from "@/components/ui/sidebar"
-import { Calendar, Home, Inbox, Search, Settings,MessageCircle } from "lucide-react"
+import {Settings,  Home,MessageCircle,Users } from "lucide-react"
 
 
   export function AppSidebar() {
@@ -26,23 +26,18 @@ import { Calendar, Home, Inbox, Search, Settings,MessageCircle } from "lucide-re
         icon: MessageCircle,
       },
       {
-        title: "Calendar",
+        title: "Users",
         url: "#",
-        icon: Calendar,
-      },
-      {
-        title: "Search",
-        url: "#",
-        icon: Search,
-      },
-      {
-        title: "Settings",
-        url: "#",
-        icon: Settings,
+        icon: Users,
       },
     ]
+    const footerItems=[{
+      title: "Settings",
+      url: "#",
+      icon: Settings,
+    },]
     return (
-      <Sidebar>
+      <Sidebar collapsible="icon">
         <SidebarContent>
           <SidebarGroup >
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -58,11 +53,23 @@ import { Calendar, Home, Inbox, Search, Settings,MessageCircle } from "lucide-re
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              
             </SidebarMenu>
           </SidebarGroupContent>
           </SidebarGroup >
         </SidebarContent>
-
+        <SidebarFooter>
+              {footerItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+              </SidebarFooter>
       </Sidebar>
     )
   }  
